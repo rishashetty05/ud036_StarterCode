@@ -1,0 +1,94 @@
+{% include 'base.html' %}
+
+{% block head %}
+    {% block title %}Content template {% endblock %}
+    <link rel="stylesheet" href="/style/newstyle.css"/>
+{%endblock%}
+
+
+{%block content%}
+    <div class="group">
+            <h1 id="lesson5"> <em>  Lesson 5 - Web Development</em> </h1>
+            <div class="concept">
+                <h3 class="concept-title" id="lesson5.1">Introduction To Netwroks</h3>
+
+                <div class="concept-description">
+                    <p>
+                       In Information technology, a <em>netwok</em> is a series of points or nodes interconnected by communication paths. Network can interconnect with other networks and also contain subnetwork.
+                       Though not directly connected, communication and exchange of information is sill possible in a network. This is a general definition, as there is a lot of versatality to networks. Internet too is a type of Network, Computer Network specifically. The Internet is more of a concept than an actual tangible entity, and it relies on a physical infrastructure that connects networks to other networks.
+                    </p>
+                    <br>
+                       We can always measure a network based on two ways : 1. Latency 2. Bandwidth.<br>
+                       The concept of <a href = "https://www.udacity.com/course/viewer#!/c-nd000/l-4212668559/e-48737168/m-48729193">Latency</a> and <a href = "https://www.udacity.com/course/viewer#!/c-nd000/l-4212668559/m-48739102"> Bandwidth</a>.
+                    <p>
+                        Computer networks or data network differ in the <em>transmission media</em> used to carry their signals, the <em>communications protocols</em> to organize network traffic, the network's size i.e. the number of bytes in a data-segment(<a href="http://searchnetworking.techtarget.com/definition/maximum-segment-size">MTU</a>), <em>topology</em> and organizational intent. In most cases, communications protocols are layered on (i.e. work using) other more specific or more general communications protocols, except for the physical layer that directly deals with the transmission media. Refer this<a href = "http://www.webopedia.com/quick_ref/OSI_Layers.asp"> link</a>
+                        Mostly <a href = https://www.udacity.com/course/viewer#!/c-nd000/l-4212668559/m-48739103> this </a> a general idea of what is required to run a network.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="concept">
+                <h3 class="concept-title" id="lesson5.2">Servers</h3>
+                <div class="concept-description">
+                        <div class="sample">
+                        <img src="webserver-basic-sm.gif" alt="Basic Server Request-Response">
+                        </div>
+                    <p>
+                        At the most basic level, when we type in an addrss,(<strong>Uniform Resource Locator</strong>) say "http://www.example.com/foo?p=1/sample.gif", and we see a page on our Computer screen.
+                        Behind the scenes, the browser actually breaks the URL into : 
+                        <ol>
+                        <li> PROTOCOL - HYper Text Transfer Protocol - <em>HTTP</em></li>
+                        <li> Server Name - Domain Name (Host)</li>
+                        <li> File Name (Path along with file name)</li>
+                        </ol>
+                        The Server name (www.example.com)translates to an IP ADDRESS which our browser connects with, and directs through path (foo?p=1/) to get the file name (sample.gif). HTTP is the protocol or language used to make a request in the form of a <em>Query Parameter</em> which mostly a <strong>GET</strong> Request asking for the given file name. The Server machine makes its service available through numbered path,  usually visible at the end pf the URL called port, eg. http://www.xxxx.yyyy.com:918. When no port number is specifiec we assume its the defult port: 80. AT times, ther are extra <strong>FRAGMENTS </strong>usually seperated by teh "#" sign.Fragments are used to particularly refernce a Page we are looking at. In the URL, it comes after query parameter.
+                    </p>
+                        <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4169998949/m-48439389">Here</a>is an explanation on how requests are sent by HTTP. The <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4169998949/m-48724355"> HTTP response </a> is followed by <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4169998949/m-3913658626">response headers</a>.
+                        There are two main classifications of the types of responses a server gives : 1. Static 2.Dynamic. <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4169998949/m-48748026">Here</a> is the basic difference. CLick <a href="http://computer.howstuffworks.com/web-server12.htm">here</a> for more specific details.
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="concept">
+                <h3 class="concept-title" id="lesson5.4">Validation</h3>
+
+                <div class="concept-description">
+                    <p>
+                        Dynamic HTML Pages as we had seen in our earlier lesson has to record data at server end, received from  the client. <a href = "https://www.udacity.com/course/viewer#!/c-nd000/l-4175328805/m-48624667">Validating </a>this data i.e. verifying whether we received what we wanted to, has to be done at the server side. For eg. Forms are usually a part of all online  websites these days, where the server records all users accessing their page. Bad data in this case cannot be accepted and the page has to be handled in such a manner that server generates a response asking user to re-enter valid inputs. Bad data can be several mbytes of juck or bad html scrpting which could hamper our server data and page format.<br>
+                        <a href="https://www.udacity.com/course/viewer#!/c-nd000/l-4175328805/m-48714317">Handling Posts</a> with GET &amp; POST Function is important here. GET and Post data is followed by Content-Length header indicates the size of the body, and the Content-Type header indicates the type of resource sent to the server. <a href= "https://www.udacity.com/course/viewer#!/c-nd000/l-4175328805/m-48724380">Validation</a> is the next step. <a ref="https://www.udacity.com/course/viewer#!/c-nd000/l-4175328805/m-48714318">Response </a>is to be generated based on this feedback.
+                    <p>
+                    <h4>String Sustitution & Advanced String Substitution</h4>
+                    <p>
+                        String Substitution isused to sustitute a variable form data which has to be reused and generated every time while coding. For eg.
+                        <pre>
+                        "<b>some bold text</b>"
+                        </pre>
+                        If we had to use the above string everywhere everytime, it would be difficult task. Instead we can use string substitution to reuse the 
+                        <pre>
+                        "<b>%s</b>" % VARIABLE 
+                        </pre>
+                        Now we can sustitute the variable to which ever value we need. Similary if its multiple variable sustitution can be done as below
+                        <pre>
+                        "some text %s then some text %s" %(variable1, variable2)
+                        </pre>
+                        A <a href = "https://www.udacity.com/course/viewer#!/c-nd000/l-4175328805/m-48746044"> sample</a> on using string substitution. In this example, we are trying to use write_form which takes two parameters, self and error. But notice that it says error="". This is an example of an <b>optional parameter</b>. It means that you can specify a value for the error parameter when you call the function but you don't have to. If you don't specify a value, it will take a default value (in this case, the empty string "").
+                    </p>
+                    <p>
+                        What happens if you want to include the same variable twice in the same string? We can do this by including a name identifier in parentheses:
+                        <pre>
+                        "text %(NAME)s text" % {"NAME": value}
+                        </pre>
+                        Now, instead of just having the variables at the end of the string, we can include a dictionary that maps NAME to a value. NAME can appear in the string multiple times, and we can have multiple names.
+                        <a href = "https://www.udacity.com/course/viewer#!/c-nd000/l-4175328805/m-48746044">Here is an example.</a>
+                    </p>
+                </div>
+            </div>
+            <br>
+            <div class="concept">
+                <h3 class="concept-title" id="lesson5.5"></h3>
+
+                <div class="concept-description">
+                    <p>
+                       
+            </div>
+{%endblock%}

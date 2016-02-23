@@ -1,0 +1,32 @@
+
+ <!DOCTYPE html>
+<!-- This 'DOCTYPE' declaration defines the document & version correctly for the browser to display.-->
+<html>
+<head>
+  <meta charset="UTF-8">
+    
+        <title>Risha Shetty - {%block title%}{%endblock%} Base HTML Templates</title>
+
+        <link rel="stylesheet" href="/style/newstyle.css"/>
+    {% block head %}
+        <!--This is how we can link our HTML contents which comprises our webpage to an external style sheet which is responsible for the styling and outlook of these contents. This is also called relative path addressing-->
+    {%endblock%}
+</head>
+<body>
+  <header>
+    WEB DEVELOPMENT USING GAE
+  </header>
+    <div id="sidebar1">
+        {%block sidebar%} {%endblock%}
+    </div> 
+    <div id="contentblock">
+        <div class="group">
+            <!--<h1 id="lesson5"> <em>  Lesson 5 - Web Development</em> </h1>-->
+            {% block content %}
+            {%endblock%}        
+        </div>
+    </div>
+    <div id="sidebar2">
+        {%block form%}
+        {%endblock%}
+    </div>

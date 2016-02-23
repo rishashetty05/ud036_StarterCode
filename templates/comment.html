@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% include 'content.html' %}
+    
+{% block head %}
+    
+{%endblock%}
+
+{%block form%}
+    {% for greeting in greetings %}
+        <b>{{ greeting.author.email }}</b> wrote: on {{greeting.topic_selected}}
+        <blockquote>{{ greeting.content|escape }}</blockquote>
+    {% endfor %}
+    <form action = "/thanks" method = "post">
+        <h3 style = "color: blue">Thank you for your details</h3>
+        <div><label>Enter your comments:<br>
+            <textarea name="content" cols="20"rows="10" maxlength = "200">Enter your content here..
+            </textarea>
+        </label></div>
+        <div><button>submit</button></div>
+    </form>
+{%endblock%}

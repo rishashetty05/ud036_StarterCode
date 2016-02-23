@@ -1,0 +1,57 @@
+header
+	{
+		width:100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 60px; 
+		background-color: black;
+		color: white;
+		font-size: 1.6em;
+		font-style: Verdana, Geneva, sans-serif;
+		padding:5px;
+	}
+#sidebar1
+	{	
+		list-style-type: none;
+		position: fixed;
+		top: 70px;/*pixels more precise than % - decided this number on coparing with header height*/
+		left: 0;
+		bottom: 0%;
+		display: block;
+		background-color: #f5f5dc;
+		margin: 0;
+    	font-size: 1.2em;
+    	width: 13%;
+    	height: 100%;
+    	overflow: auto;
+	} 
+#contentblock
+	{
+		height: 100%;
+		padding:5px;
+		margin-left: 170px;
+		margin-top: 75px;
+		margin-right: 250px;
+		border: 1px;
+    	background-color: #ffebcd;
+    	border-radius: 10px; /* The border-radius gives rounded corners.*/
+		-webkit-box-sizing: border-box;
+    	-moz-box-sizing: border-box;
+    	-ms-box-sizing: border-box;
+    	box-sizing: border-box;
+	}
+#sidebar2
+	{
+		position: fixed;
+		top: 70px;
+		right: 0;
+		bottom: 0%;
+		display: block;
+		background-color: #f5f5dc;
+		width: 255px;
+		height: 100%;
+    	overflow: auto;
+    	text-align: center;
+	}
+
